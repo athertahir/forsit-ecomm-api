@@ -53,20 +53,6 @@ forsit-ecomm-api/
 * `GET /sales/revenue/compare`:	Revenue comparison between two periods (and category)
 
 
-## Quick Start
-
-1. Start Database (Docker or local MySQL). You can also use sqlite if mysql is not installed by setting DATABASE_URL like this `"sqlite:///./forsit_ecom.db"`
-
-2. Install requirements: `pip install -r requirements.txt`
-
-3. Seed Data: `python app/scripts/demo_data.py`
-
-4. Run FastAPI: `uvicorn app.main:app --reload`
-
-API: [http://localhost:8000/docs](http://localhost:8000/docs)
-
-
-
 ## Requirements
 
 ```
@@ -78,13 +64,25 @@ python-dotenv
 faker
 ```
 
+## Setup Instructions (Windows)
 
-## Entity Relationship Diagram (ERD)
+1. Start Database (Docker or local MySQL). You can also use sqlite if mysql is not installed by setting DATABASE_URL like this `"sqlite:///./forsit_ecom.db"`
 
-![](./erd.png)
+2. Install requirements:
 
-This diagram shows the core relationships:
+````
+python -m venv .venv
+.venv\Scripts\activate
+pip install -r requirements.txt
+```
 
-* Each product has one inventory entry.
-* Each sale is linked to a product.
-* Inventory history tracks changes per product.
+5. Seed Data: `python app/scripts/demo_data.py`
+
+6. Run FastAPI: `uvicorn app.main:app --reload`
+
+API: [http://localhost:8000/docs](http://localhost:8000/docs)
+
+
+
+
+
