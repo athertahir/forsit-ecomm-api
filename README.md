@@ -70,15 +70,21 @@ faker
 
 2. Install requirements:
 
-````
+```
 python -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-5. Seed Data: `python app/scripts/demo_data.py`
+3. Run FastAPI: `uvicorn app.main:app --reload`
 
-6. Run FastAPI: `uvicorn app.main:app --reload`
+4. Seed Data:
+
+```
+set PYTHONPATH=.
+
+python app/scripts/forsit_data.py
+```
 
 API: [http://localhost:8000/docs](http://localhost:8000/docs)
 
